@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Tracker</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+<div class="background-animation"></div>
+
+<div class="container">
+    <h1>🌍 Carbon Footprint Awareness Platform</h1>
+
+    <div class="card">
+        <label>Electricity Usage (kWh/month)</label>
+        <input type="number" id="electricity">
+
+        <label>Vehicle Travel (km/month)</label>
+        <input type="number" id="vehicle">
+
+        <label>Flight Travel (km/year)</label>
+        <input type="number" id="flight">
+
+        <div class="buttons">
+            <button onclick="calculateFootprint()">Calculate</button>
+            <button onclick="downloadPDF()">Download PDF</button>
+            <button onclick="resetData()">Reset</button>
+        </div>
+    </div>
+
+    <div class="dashboard">
+        <div class="box">
+            <h2>Total Emission</h2>
+            <p id="totalEmission">0 kg CO₂</p>
+        </div>
+
+        <div class="box">
+            <h2>Eco Score</h2>
+            <p id="ecoScore">0/100</p>
+        </div>
+
+        <div class="box">
+            <h2>Carbon Level</h2>
+            <p id="carbonLevel">Low</p>
+        </div>
+    </div>
+
+    <div class="tips card">
+        <h2>Eco Suggestions</h2>
+        <ul id="tipsList"></ul>
+    </div>
+
+    <div class="history card">
+        <h2>Emission History</h2>
+        <ul id="historyList"></ul>
+    </div>
+
+    <div class="card">
+        <canvas id="footprintChart"></canvas>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
